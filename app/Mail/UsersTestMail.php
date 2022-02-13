@@ -11,6 +11,8 @@ class UsersTestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $sender;
+
     /**
      * Create a new message instance.
      *
@@ -28,7 +30,8 @@ class UsersTestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('userMail')
-        ->subject('Test Email');
+        return $this->view('templates.userMail')
+            ->subject('Test Email')
+            ->with($this->sender);
     }
 }
