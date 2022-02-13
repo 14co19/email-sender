@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+header {
+    margin: 16px 0 48px;
+}
+
+h1 {
+    font-size: 68px;
+}
+
+header a {
+    color: #333333;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.potrait {
+    width: 250px;
+}
+
+p {
+    font-weight: 600;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 12px;
+}
+
+footer {
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+    margin-top: 16px;
+    padding: 16px 0;
+}
