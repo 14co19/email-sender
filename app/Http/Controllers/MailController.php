@@ -25,10 +25,10 @@ class MailController extends Controller
             'from' => config('mail.from')['name']
         ];
 
-        $chunks = array_chunk($userData, 250);
+        $chunks = array_chunk($userData, 500);
 
-        for($i=0; $i<count($chunks); $i++){
-            dispatch(new \App\Jobs\SendEmail($sender, $chunks[$i]));
+        foreach($chunks as $chunk){
+            dispatch(new \App\Jobs\SendEmail($sender, $chunk));
         }
 
         return redirect('/')->with(['msg' => 'Email is Sent.']);
