@@ -27,6 +27,7 @@ class MailController extends Controller
 
         $chunks = array_chunk($userData, 500);
 
+        // adding email sending on multiple queue jobs
         foreach($chunks as $chunk){
             dispatch(new \App\Jobs\SendEmail($sender, $chunk));
         }

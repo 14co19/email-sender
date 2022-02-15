@@ -35,7 +35,6 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        // $chunk = array_chunk();
         foreach($this->user as $u) {
             $mailable = new UsersTestMail($this->sender);
             \Mail::to($u)->send($mailable);
